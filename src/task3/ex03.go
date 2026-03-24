@@ -8,10 +8,9 @@ import (
 	"strings"
 )
 
-func main3() {
+func main() {
 	reader := bufio.NewReader(os.Stdin)
 
-	//fmt.Println("1 Список символов:")
 	text1, err := reader.ReadString('\n')
 	if err != nil {
 		fmt.Println("Invalid input")

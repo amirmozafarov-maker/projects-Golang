@@ -56,7 +56,7 @@ func TopKWords(text string, k int) []string {
 	return result
 }
 
-func main2() {
+func main() {
 	reader := bufio.NewReader(os.Stdin)
 
 	fmt.Println("Введи символы:")

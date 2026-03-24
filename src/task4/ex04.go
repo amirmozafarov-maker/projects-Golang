@@ -33,16 +33,16 @@ func (e PatientNotFoundError) Error() string {
 	return "patient not found"
 }
 
-// SaveOperation сохраняет новое посещение
+// SaveOperation
 func (journal *ClinicJournal) SaveOperation(scanner *bufio.Scanner) error {
 	if !scanner.Scan() {
-		return fmt.Errorf("Invalid input") // исправлено: было "InvalidInput"
+		return fmt.Errorf("Invalid input")
 	}
 
-	fullName := strings.TrimSpace(scanner.Text()) // исправлено: fulname → fullName
+	fullName := strings.TrimSpace(scanner.Text())
 
 	if !scanner.Scan() {
-		return fmt.Errorf("Invalid input") // исправлено: было "Invalid Input"
+		return fmt.Errorf("Invalid input")
 	}
 
 	specialization := strings.TrimSpace(scanner.Text())
@@ -78,7 +78,7 @@ func (journal *ClinicJournal) SaveOperation(scanner *bufio.Scanner) error {
 	return nil
 }
 
-// GetHistoryOperation возвращает историю посещений
+// GetHistoryOperation
 func (journal *ClinicJournal) GetHistoryOperation(scanner *bufio.Scanner) error {
 	if !scanner.Scan() {
 		return fmt.Errorf("Invalid input")
@@ -101,7 +101,7 @@ func (journal *ClinicJournal) GetHistoryOperation(scanner *bufio.Scanner) error 
 	return nil
 }
 
-// GetLastVisitOperation возвращает дату последнего визита к специалисту
+// GetLastVisitOperation
 func (journal *ClinicJournal) GetLastVisitOperation(scanner *bufio.Scanner) error {
 	if !scanner.Scan() {
 		return fmt.Errorf("Invalid input")
@@ -144,7 +144,6 @@ func (journal *ClinicJournal) GetLastVisitOperation(scanner *bufio.Scanner) erro
 	return nil
 }
 
-// handleError обрабатывает ошибки
 func handleError(err error) {
 	if err == nil {
 		return
